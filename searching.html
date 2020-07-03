@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <meta charset = "utf-8"/>
+    <title> Searching and Sorting </title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="Images/gravatar.png" sizes="32x32">
+</head>
+<body>
+    <div id = "theCarousel" class = "carousel slide" data-ride="carousel" data-interval = "2500">
+        <ol class = "carousel-indicators">
+            <li data-target="#theCarousel" data-slide-to="0" class="active"> </li >
+            <li data-target="#theCarousel" data-slide-to="1"> </li>
+            <li data-target ="#theCarousel" data-slide-to="2"> </li>
+        </ol>
+        <div class = "carousel-inner">
+            <div class = "item active">
+                 <div class = "slide1"></div>
+                 <div class = "carousel-caption">
+                     <p> Currently attending William Lyon Mackenzie C.I. </p>
+                 </div>
+            </div>
+            <div class = "item">
+                <div class = "slide2"></div>
+                <div class = "carousel-caption">
+                    <p> I enjoy doing online contests for competitive programming. </p>
+                </div>
+            </div>
+            <div class = "item">
+                <div class = "slide3"></div>
+                <div class = "carousel-caption">
+                    <h4> Using Graphics to design a COVID-19 Themed Game </h4>
+                </div>
+            </div>
+        </div>
+        <a class = "left carousel-control" href = "#theCarousel" data-slide = "prev">
+            <span class = "glyphicon glyphicon-chevron-left"></span></a>
+        <a class = "right carousel-control" href = "#theCarousel" data-slide = "next">
+            <span class = "glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+                <div class="nav-link-wrapper active-nav-link">
+                    <div class="tutorial">
+                        <a href="tutorials.html">Tutorials</a>
+                        <div class="tutorial-list">
+                            <a href="oop.html">OOP</a>
+                            <a href="arrays.html">Arrays/ArrayLists</a>
+                            <a href="searching.html">Searching and Sorting</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="projects.html">Projects</a>
+                </div>
+            </div>
+            <div class="right-side">
+                Alan Li
+                <div class="name">
+                    <div><img src = "images/gravatar.png" alt = "Image" height = "50" width = "50"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <h1> Searching and Sorting </h1>
+            <h4><p>Searching and sorting together are both very important in programming, as they are what allows
+                you to modify your data and find the specific things that you want from your data. Different sorting
+                and searching algorithms have different speeds. This is represented by what is called time complexity,
+                 or big O notation.
+                 <br>
+                 Here is an graph on how fast time complexities are, comparing input data size to time.
+                  </p> </h4>
+                 <div><img src = "images/TimeComplexity.jpg" alt = "Image" height = "349" width = "498"></div>
+                 <h5><p> credits: Open4Tech </p> </h5>
+            <h4><p>
+                To sort data means to take your data and put it in some sort of order, no matter what kind of
+                order it is. The most common way of sorting is sorting by ascending order,
+                where the smallest value is put first, and then the values gradually get larger
+                until you approach the largest number in the array. There are many different ways of sorting,
+                so let’s explore some of the basic ones.
+                <br>
+            </p></h4>
+
+            <h3>Bubble Sort </h3>
+            <h4><p>This is the simplest algorithm used for sorting, and it involves checking every two
+                values next to each other, or every two adjacent values. If they are in the wrong order,
+                then they can be switched eventually giving you the sorted array. </p> </h4>
+            <br>
+                <pre><code>int[]arr = {3, 7, 10, 4, 2, 1, 9, 5, 8};
+for (int i = 0; i &lt; arr.length; i++){
+    for (int j = i+1; j &lt; arr.length; j++){
+        if (arr[i] &lt; arr[j]){
+            int temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
+        }
+    }
+}</code></pre>
+            <br>
+            <h4><p> If we were to use another for loop to print out the final array: </p> </h4>
+            <br>
+            <pre><code>Output:
+1 2 3 4 5 6 7 8 9 10
+</code></pre>
+            <h3>Insertion Sort </h3>
+            <h4><p> This is another algorithm that instead of comparing all of the elements next to
+                each other, it takes each element and inserts each number one at a time, in the end
+                being able to sort all of the elements. Since this algorithm only picks one specific
+                element every time, it is not very efficient either, running at the same time complexity
+                as bubble sort. </p> </h4>
+<pre><code>int[]arr = {1, 4, 9, 1, 15, 8, 10};
+for (int i = 1; i &lt; arr.length; i++){
+    int curValue = arr[i], j = i-1;
+    while (j >= 0 && arr[j] > curValue){
+        arr[j + 1] = arr[j];
+        j--;
+    }
+    arr[j + 1] = curValue;
+}
+</code></pre>
+            <br>
+            <h4><p> If we were to print out the final array: </p> </h4>
+            <br>
+<pre><code>Output: 1 1 4 8 9 10 15
+</code></pre>
+            <h3>Merge Sort </h3>
+            <h4><p>Merge sort is a quicker algorithm that involves continuously splitting the array into
+                halves and then sorting the halves. It first splits all the elements until they are only
+                one element long, then merges them back together, by comparing the elements to each other
+                to get a sorted part of the array. Once the algorithm is finished merging, the array will
+                be sorted. Because this algorithm is splitting then merging together, and not comparing
+                everything like insertion sort or bubble sort, this algorithm is slightly more efficient,
+                at a time complexity of O(n logn) compared to O(n^2). </p> </h4>
+<pre><code>public static void main(String[] args) {
+    int[] arr = {1, 3, 6, 2, 8, 2, 5, 9, 10};
+    mergeSort(arr, arr.length);
+    for(int i = 0; i &lt; arr.length; i++){
+        System.out.print(arr[i]+" ");
+    }
+    System.out.println();
+}
+static void merge (int[]leftSide, int[]rightSide, int[]arr, int leftLength, int rightLength){
+    int curIndex = 0, left = 0, right = 0;
+    while (left &lt; leftLength && right &lt; rightLength){
+        if (leftSide[left] &lt; rightSide[right]){
+            arr[curIndex] = leftSide[left];
+            left++;
+        }
+        else{
+            arr[curIndex] = rightSide[right];
+            right++;
+        }
+        curIndex++;
+    }
+    while (left &lt; leftLength){
+        arr[curIndex] = leftSide[left];
+        curIndex++;
+        left++;
+    }
+    while (right &lt; rightLength){
+        arr[curIndex] = rightSide[right];
+        curIndex++;
+        right++;
+    }
+}
+static void mergeSort(int[]arr, int length){
+    if (length &lt; 2)return;
+    int mid = length/2, curIndex = 0;
+    int[]leftSide = new int[mid], rightSide = new int[length-mid];
+    for (int i = 0; i &lt; length; i++){
+        if (i &lt; mid)leftSide[i] = arr[i];
+        else{
+            rightSide[curIndex] = arr[i];
+            curIndex++;
+        }
+    }
+    mergeSort(leftSide, mid);
+    mergeSort(rightSide, length-mid);
+    merge(leftSide, rightSide, arr, mid, length-mid);
+}
+</code></pre>
+            <br>
+            <h2> Searching </h2>
+            <h4><p>Searching is just finding something specific in data, an example being finding the
+                index of a specific element in an array. This can be done in a few different ways as well,
+                each algorithm having a different time complexity. Let’s explore a few of them. </p></h4>
+
+            <h3>Linear Search/Sequential Search </h3>
+            <h4> <p> Linear search involves starting from one of the ending indexes, either the start or
+                the end of the array, and searching through the entire array to find the specific element.
+                Since the worst case would be searching through the entire array to find the element
+                (if the element is the very last index that is checked), thus the time complexity for the search
+                would be O(N), N being the length of the array.
+                <br> <br>
+                Let's say that we want to find the integer 3 in an array containing 2, 4, 6, 3, 10, 14, and 7.
+                To do this with linear search, the code is show below:
+            </p> </h4>
+<pre><code>int[]arr = {2, 4, 6, 3, 10, 14, 7};
+for (int i = 0; i < arr.length; i++){
+    if (arr[i] == 3){
+        System.out.println(i);
+        break;
+    }
+}
+</code></pre>
+            <h4> In this case, we were looking for a number somewhat in the middle, being 3 but
+                if we were looking for 7, then this algorithm would have to loop through the entire
+                array to find the final element, 7, thus having the worst case of O(N). </h4>
+            <h3>Binary Search </h3>
+            <h4> <p>Binary search requires a sorted array to be used properly. It involves continuously searching halves of the array until you find the element. Since the array is sorted, you can keep track of the interval that is being checked to find the element. At first, the search interval is the entire array. Next, you can take the middle number, and check if the number you are finding is larger or smaller than this middle number. Just by doing the search once, you are already splitting the total search interval into half! Depending on the comparison of the middle number to the number we are searching for, it is easy to determine which half of the interval to keep searching in.
+                <br></p></h4>
+                <h4> <p>For example, if the number list was 1 2 3 4 5 7 9 10 11 and you are looking for 7,
+the middle number would be halfway through, so it would be the number 5. Since 7 is larger than 5, and the array must be sorted, we know that we should search for the larger half next, as since 7 is larger than 5 it must be somewhere between 5 and the end of the array, in this case being between 5 and 11, which is true. However, let’s say that we were searching for 3. In this case, since 3 is smaller than 5 we know that it is somewhere between the start of the array to the middle, which is 1 to 5, so this is true as well, meaning that we should then take the first half of the array instead.
+Because of the fact that the array searches continuously split the array in half, this process only takes
+O(log N) time instead of O(N) time like linear search.
+            <br>
+            Let's say that we had the same array as before, but sorted, and we want to find the number 14. <br>
+            The code below demonstrates how to do so:
+            </p> </h4>
+<pre><code>int[]arr = {2, 3, 4, 6, 7, 10, 14};
+int left = 0, right = arr.length-1;
+while (left <= right){
+    int mid = (left + right) / 2;
+    if(arr[mid]==14){
+        System.out.println(mid);
+        return;
+    }
+    if(arr[mid] < 14){
+        left = mid+1;
+    }
+    else{
+        right = mid-1;
+    }
+}
+</code></pre>
+<pre><code>Output: 6
+</code></pre>
+        <br>
+        <h2> <p>  For more information, you can visit these sites: </p> </h2>
+        <h4> <ol>
+            <li> <a href="https://www.javatpoint.com/sorting-algorithms"> JavaAtPoint: Info on Sorting Algorithms </a> <br> <br>
+            <li> <a href="https://www.geeksforgeeks.org/searching-algorithms/"> GeeksForGeeks: Searching Algorithms </a> <br> <br>
+            <li> <a href="https://www.geeksforgeeks.org/sorting-algorithms/"> GeeksForGeeks: Sorting Algorithms </a> <br> <br>
+            <li> <a href="https://stackabuse.com/search-algorithms-in-java/"> Stackabuse: Searching Algorithms </a> <br> <br>
+        </ol> </h4>
+        </div>
+    </div>
+    <footer class = "page-footer">
+        <div class = "icons">
+            <ul>
+                <li>
+                    <a href="https://github.com/AlanL2" title="Github">
+                        <div class = "image">
+                            <img src="images/github.png" class="current-image" alt="Github" height="32">
+                        </div>
+                    </a>
+                    <a href="https://dmoj.ca/user/AlanL" title="DMOJ Profile">
+                        <div class = "image">
+                            <img src="images/dmoj.png" class="current-image" alt="DMOJ" height="32">
+                        </div>
+                    </a>
+                    <a href = "https://mcpt.ca/user/AlanL" title = "MCPT">
+                        <div class = "image">
+                            <img src = "images/mcptlogo.png" class = "current-image" alt = "MCPT" height = "32">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

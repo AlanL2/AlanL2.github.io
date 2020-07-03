@@ -1,0 +1,223 @@
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 38px;
+}
+
+.left-side {
+  display: flex;
+}
+
+.nav-wrapper > .left-side > div {
+  margin-right: 20px;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.nav-link-wrapper {
+  height: 26px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s;
+}
+
+.active-nav-link {
+  border-bottom: 1px solid black;
+}
+
+.active-nav-link a {
+  color: black !important;
+}
+
+.nav-link-wrapper a {
+  color: #8a8a8a;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+  border-bottom: 1px solid black;
+}
+
+.nav-link-wrapper a:hover {
+  color: black;
+}
+
+.portfolio-items-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.portfolio-item-wrapper {
+  position: relative;
+}
+
+.portfolio-img-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 350px;
+  width: 100%;
+}
+
+.img-text-wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.img-text-wrapper .subtitle {
+  transition: 1s;
+  color: transparent;
+}
+
+.image-blur {
+  transition: 1s;
+  filter: brightness(10%);
+}
+
+.img-text-wrapper:hover .subtitle {
+  color: lightseagreen;
+  font-weight: 600;
+}
+
+.logo-wrapper img {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.two-column-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.profile-image-wrapper img {
+  width: 100%;
+}
+
+.profile-content-wrapper {
+  padding: 30px;
+}
+
+.profile-content-wrapper h1 {
+  color: lightseagreen;
+}
+/*Slider styling*/
+.slide1{
+    background-image: url('images/wlmac.png');
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 300px 300px;
+}
+.slide2{
+    background-image: url('images/contest.png');
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.slide3{
+    background-image: url('images/BubblesToTheBrim.png');
+    height: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 800px 300px;
+}
+.carousel-caption h1{
+  font-size: 3.4em;
+  font-family: 'Lato', sans-serif;
+  padding-bottom: .4em;
+  color: black;
+}
+.carousel-caption p{
+  font-size: 2em;
+  color: black;
+  position: relative;
+}
+.carousel-caption h4{
+    font-size: 1.5em;
+    color: black;
+    text-align: center;
+}
+.two-column-wrapper{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+}
+.profile-pic{
+    padding: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+.project-about{
+    padding: 20 px;
+    position: relative;
+    text-align: center;
+}
+.page-footer{
+    text-align: center;
+    position: relative;
+}
+.image{
+    position: relative;
+    padding: 10px;
+    display: inline;
+}
+.tutorial{
+    position: relative;
+    display: inline;
+}
+.tutorial-list{
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.tutorial-list a {
+  color: black;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+}
+.tutorial-list a:hover {
+    background-color: #ddd;
+}
+.tutorial:hover .tutorial-list {
+    display: block;
+}
+.box{
+    line-height: 17px;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid black;
+    white-space: pre-wrap;
+    border-radius: 5px;
+    background-color: #D3D3D3;
+    margin-bottom: 10px;
+}
+pre code {
+    font-family: "Courier New", Courier, monospace;
+    background-color: #EEEEEE;
+    border: 1px solid #999;
+    display: block;
+    padding: 10px;
+}
+li {list-style: none; }
