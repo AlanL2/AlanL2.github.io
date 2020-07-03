@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <meta charset = "utf-8"/>
+    <title> Object-Oriented Programming </title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="Images/gravatar.png" sizes="32x32">
+</head>
+<body>
+    <div id = "theCarousel" class = "carousel slide" data-ride="carousel" data-interval = "2500">
+        <ol class = "carousel-indicators">
+            <li data-target="#theCarousel" data-slide-to="0" class="active"> </li >
+            <li data-target="#theCarousel" data-slide-to="1"> </li>
+            <li data-target ="#theCarousel" data-slide-to="2"> </li>
+        </ol>
+        <div class = "carousel-inner">
+            <div class = "item active">
+                 <div class = "slide1"></div>
+                 <div class = "carousel-caption">
+                     <p> Currently attending William Lyon Mackenzie C.I. </p>
+                 </div>
+            </div>
+            <div class = "item">
+                <div class = "slide2"></div>
+                <div class = "carousel-caption">
+                    <p> I enjoy doing online contests for competitive programming. </p>
+                </div>
+            </div>
+            <div class = "item">
+                <div class = "slide3"></div>
+                <div class = "carousel-caption">
+                    <h4> Using Graphics to design a COVID-19 Themed Game </h4>
+                </div>
+            </div>
+        </div>
+        <a class = "left carousel-control" href = "#theCarousel" data-slide = "prev">
+            <span class = "glyphicon glyphicon-chevron-left"></span></a>
+        <a class = "right carousel-control" href = "#theCarousel" data-slide = "next">
+            <span class = "glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+                <div class="nav-link-wrapper active-nav-link">
+                    <div class="tutorial">
+                        <a href="tutorials.html">Tutorials</a>
+                        <div class="tutorial-list">
+                            <a href="oop.html">OOP</a>
+                            <a href="arrays.html">Arrays/ArrayLists</a>
+                            <a href="searching.html">Searching and Sorting</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="projects.html">Projects</a>
+                </div>
+            </div>
+            <div class="right-side">
+                Alan Li
+                <div class="name">
+                    <div><img src = "images/gravatar.png" alt = "Image" height = "50" width = "50"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <h1> OOP </h1>
+            <h4><p>OOP stands for Object-Oriented Programming. This involves making classes in Java and using
+                them as templates, so that multiple of the same thing can be created. Using a class as a
+                template and creating something is called an <b> Object </b>.
+                 <br>
+            <h4><p> So let's say if we were to make a Duck class. </p> </h4>
+<pre><code>public class Duck{
+
+}</code></pre>
+            <h4><p>
+                All objects have what is known as <b> Properties </b>, and in Java, these are represented
+                by the variables that are in the class, known as <b> Instance Variables </b>.
+                <br>
+                Here, we will have a variable representing if the duck is asleep or not, which can be
+                represented by a boolean variable, and an age variable, representing the duck's age.
+            </p></h4>
+<pre><code>public class Duck{
+    private int age;
+    private boolean asleep;
+}</code></pre>
+            <h3>Creating a Constructor</h3>
+            <h4><p> To be able to create objects and differentiate objects from each other,
+                    we have to use a <b> constructor </b> to pass in values.</p> </h4>
+            <br>
+<pre><code>public class Duck{
+    private int age;
+    private boolean asleep;
+    public Duck(int age, boolean asleep){
+        this.age = age;
+        this.asleep = asleep;
+    }
+}</code></pre>
+            <br>
+            <h3> Actions/Behaviours </h3>
+            <h4><p> An action or behaviour is something that your object is able to do. In
+                our case, let's say that the duck will be able to quack and go to sleep, and vice versa.
+                We can represent these by using void methods. The second and third method will change
+                the boolean instance variable, so we call this a <b> set </b> method.
+            <br>
+<pre><code>public class Duck{
+    private int age;
+    private boolean asleep;
+    public Duck(int age, boolean asleep){
+        this.age = age;
+        this.asleep = asleep;
+    }
+    public void quack(){
+        System.out.println("Quack!");
+    }
+    public void goToSleep(){
+        asleep = true;
+    }
+    public void wakeUp(){
+        asleep = false;
+    }
+}</code></pre>
+            <br>
+            <h4><p> We can also have behaviours that check for something. These are called
+            <b> get </b> methods. Thus, we will check if the duck is asleep or not, and
+            this is relevant to the asleep variable.</p> </h4>
+            <br>
+<pre><code>public class Duck{
+    private int age;
+    private boolean asleep;
+    public Duck(int age, boolean asleep){
+        this.age = age;
+        this.asleep = asleep;
+    }
+    public void quack(){
+        System.out.println("Quack!");
+    }
+    public void goToSleep(){
+        asleep = true;
+    }
+    public void wakeUp(){
+        asleep = false;
+    }
+    public boolean getSleepStatus(){
+        return asleep;
+    }
+}</code></pre>
+            <h4><p>Now, you are able to make the object do things. In our case, we can
+            give the duck an age through the constructor, make it go to sleep or wake up, and
+            get the sleep status of the duck to see if it is awake or asleep. </p> </h4>
+            <h4> <p> To create an object, we use the <b> new </b> keyword to create a new class, and use
+                the same number of parameters as there are in the constructor. </p> </h4>
+<pre><code>public static void main(String[] args) {
+    Duck d = new Duck(10, false);
+}</code></pre>
+        <h3> Encapsulation </h3>
+        <h4> <p> Encapsulation is the hiding of information like the variables that we used in our Duck class.
+            This prevents other classes from using the variables in our class. We have already done this, by using
+            the <b> private </b> keyword with our variables. However, if we were to remove that keyword, then these
+            variables would no longer be encapsulated. </p> </h4>
+        <h3> Inheritance </h3>
+        <h4> <p> This is when another class uses the similar template of a class. The original class is called
+            the <b> parent </b> class, while the class using the template is called the <b> child </b> class.
+            To do this, the child class must <b> extend </b> the parent class. This allows for the child class to
+            by default take all of the methods of the parent class, and it is allowed to override those methods
+            as well.
+            <br>
+            Let's say that there is a class called Animal that is the parent class, and it has its own
+            encapsulated instance variables and its own methods. We can use our Duck class to extend that class,
+            which takes its methods as default.
+        </p></h4>
+<pre><code>public class Duck extends Animal{
+
+}</code></pre>
+        <h3> Class Casting </h3>
+        <h4> <p> Class casting involves the change of one class to another, either superclass to subclass
+            or vice versa. Going from a subclass to a superclass is automatic, but if you are going the
+            other way around, then you must manually do it.
+<pre><code>Duck d = (Duck)(new Animal()); </code></pre>
+        <h3> Abstract Classes </h3>
+        <h4> <p> These are classes that do not have any specific information in them.
+                They only have methods, that can be overridden by subclasses. Thus, Abstract Classes
+                are only used to be extended and overridden for the methods to do something specific.</p> </h4>
+<pre><code>public abstract class Animal{
+    public abstract boolean getSleepStatus();
+    public abstract boolean goToSleep();
+}
+private int age;
+private boolean asleep;
+public Duck(int age, boolean asleep){
+    this.age = age;
+    this.asleep = asleep;
+}
+public void quack(){
+    System.out.println("Quack!");
+}
+public void goToSleep(){ //overriding the origial abstract method
+    asleep = true;
+}
+public void wakeUp(){
+    asleep = false;
+}
+public boolean getSleepStatus(){ //overriding the original abstract method
+    return asleep;
+}
+</code></pre>
+        <br>
+        <h2> <p>  For more information, you can visit these sites: </p> </h2>
+        <h4> <ol>
+            <li> <a href="https://docs.oracle.com/javase/tutorial/java/concepts/index.html"> Oracle: OOP </a> <br> <br>
+            <li> <a href="https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/"> GeeksForGeeks: Object Oriented
+            Programming Concept in Java </a> <br> <br>
+        </ol> </h4>
+        <a href="arrays.html" class = "btn btn-success btn-lg" role="button">Next Tutorial</a>
+        <footer class = "page-footer">
+            <div class = "icons">
+                <ul>
+                    <li>
+                        <a href="https://github.com/AlanL2" title="Github">
+                            <div class = "image">
+                                <img src="images/github.png" class="current-image" alt="Github" height="32">
+                            </div>
+                        </a>
+                        <a href="https://dmoj.ca/user/AlanL" title="DMOJ Profile">
+                            <div class = "image">
+                                <img src="images/dmoj.png" class="current-image" alt="DMOJ" height="32">
+                            </div>
+                        </a>
+                        <a href = "https://mcpt.ca/user/AlanL" title = "MCPT">
+                            <div class = "image">
+                                <img src = "images/mcptlogo.png" class = "current-image" alt = "MCPT" height = "32">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

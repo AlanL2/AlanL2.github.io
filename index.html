@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <meta charset = "utf-8"/>
+    <title> Home Page </title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="Images/gravatar.png" sizes="32x32">
+</head>
+<body>
+    <div id = "theCarousel" class = "carousel slide" data-ride="carousel" data-interval = "2500">
+        <ol class = "carousel-indicators">
+            <li data-target="#theCarousel" data-slide-to="0" class="active"> </li >
+            <li data-target="#theCarousel" data-slide-to="1"> </li>
+            <li data-target ="#theCarousel" data-slide-to="2"> </li>
+        </ol>
+        <div class = "carousel-inner">
+            <div class = "item active">
+                 <div class = "slide1"></div>
+                 <div class = "carousel-caption">
+                     <p> Currently attending William Lyon Mackenzie C.I. </p>
+                 </div>
+            </div>
+            <div class = "item">
+                <div class = "slide2"></div>
+                <div class = "carousel-caption">
+                    <p> I enjoy doing online contests for competitive programming. </p>
+                </div>
+            </div>
+            <div class = "item">
+                <div class = "slide3"></div>
+                <div class = "carousel-caption">
+                    <h4> Using Graphics to design a COVID-19 Themed Game </h4>
+                </div>
+            </div>
+        </div>
+        <a class = "left carousel-control" href = "#theCarousel" data-slide = "prev">
+            <span class = "glyphicon glyphicon-chevron-left"></span></a>
+        <a class = "right carousel-control" href = "#theCarousel" data-slide = "next">
+            <span class = "glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <div class="tutorial">
+                        <a href="tutorials.html">Tutorials</a>
+                        <div class="tutorial-list">
+                            <a href="oop.html">OOP</a>
+                            <a href="arrays.html">Arrays/ArrayLists</a>
+                            <a href="searching.html">Searching and Sorting</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="projects.html">Projects</a>
+                </div>
+            </div>
+            <div class="right-side">
+                Alan Li
+                <div class="name">
+                    <div><img src = "images/gravatar.png" alt = "Image" height = "50" width = "50"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class = "welcome-page">
+                <p> <h1> Hi, welcome to my site. I hope you enjoy your time here! </h1> </p>
+                <br>
+                <p> <h4>
+                    This is my portfolio that I have created for your viewing purposes.
+                </h4> </p>
+                <br>
+                <p> <h4>
+                    Here you will be able to find info about me, tutorials on multiple different
+                    topics as well as some projects that I have been creating over the years.
+                </h4> </p>
+                <br> <br>
+                <a href="about.html" class = "btn btn-success btn-lg" role="button">Continue</a>
+            </div>
+        </div>
+    </div>
+    <footer class = "page-footer">
+        <div class = "icons">
+            <ul>
+                <li>
+                    <a href="https://github.com/AlanL2" title="Github">
+                        <div class = "image">
+                            <img src="images/github.png" class="current-image" alt="Github" height="32">
+                        </div>
+                    </a>
+                    <a href="https://dmoj.ca/user/AlanL" title="DMOJ Profile">
+                        <div class = "image">
+                            <img src="images/dmoj.png" class="current-image" alt="DMOJ" height="32">
+                        </div>
+                    </a>
+                    <a href = "https://mcpt.ca/user/AlanL" title = "MCPT">
+                        <div class = "image">
+                            <img src = "images/mcptlogo.png" class = "current-image" alt = "MCPT" height = "32">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

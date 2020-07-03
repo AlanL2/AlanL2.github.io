@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <meta charset = "utf-8"/>
+    <title> Arrays and ArrayLists </title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="Images/gravatar.png" sizes="32x32">
+</head>
+<body>
+    <div id = "theCarousel" class = "carousel slide" data-ride="carousel" data-interval = "2500">
+        <ol class = "carousel-indicators">
+            <li data-target="#theCarousel" data-slide-to="0" class="active"> </li >
+            <li data-target="#theCarousel" data-slide-to="1"> </li>
+            <li data-target ="#theCarousel" data-slide-to="2"> </li>
+        </ol>
+        <div class = "carousel-inner">
+            <div class = "item active">
+                 <div class = "slide1"></div>
+                 <div class = "carousel-caption">
+                     <p> Currently attending William Lyon Mackenzie C.I. </p>
+                 </div>
+            </div>
+            <div class = "item">
+                <div class = "slide2"></div>
+                <div class = "carousel-caption">
+                    <p> I enjoy doing online contests for competitive programming. </p>
+                </div>
+            </div>
+            <div class = "item">
+                <div class = "slide3"></div>
+                <div class = "carousel-caption">
+                    <h4> Using Graphics to design a COVID-19 Themed Game </h4>
+                </div>
+            </div>
+        </div>
+        <a class = "left carousel-control" href = "#theCarousel" data-slide = "prev">
+            <span class = "glyphicon glyphicon-chevron-left"></span></a>
+        <a class = "right carousel-control" href = "#theCarousel" data-slide = "next">
+            <span class = "glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="about.html">About</a>
+                </div>
+                <div class="nav-link-wrapper active-nav-link">
+                    <div class="tutorial">
+                        <a href="tutorials.html">Tutorials</a>
+                        <div class="tutorial-list">
+                            <a href="oop.html">OOP</a>
+                            <a href="arrays.html">Arrays/ArrayLists</a>
+                            <a href="searching.html">Searching and Sorting</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="projects.html">Projects</a>
+                </div>
+            </div>
+            <div class="right-side">
+                Alan Li
+                <div class="name">
+                    <div><img src = "images/gravatar.png" alt = "Image" height = "50" width = "50"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <h1> Arrays and ArrayLists </h1>
+            <h4><p> Most of the basic variables can only store one specific value of that type, like an integer
+                    variable storing one integer, or a String variable storing one String. However, what if we
+                    want to store more than one value in one single variable? That is where Arrays and ArrayLists come in.
+                    <br> <br>
+                    ArrayLists and Arrays are both built-in Java data structures that can store multiple values of the
+                    same type. They are much more efficient in coding than using a lot of variables,
+                    as if you want to store an extremely large amount of numbers you can just declare one of these
+                    instead of declaring one variable for every value.
+            <br>
+
+            <h3> Arrays </h3>
+            <h4><p>Arrays are data structures that have a fixed length, meaning
+                that once they are initialized the length of the array cannot be changed.
+                Modifications may be made to any element in the array, but if you set the array
+                with a size or with some amount of values, you cannot add more values to the array.
+                Arrays usually have a lot of IndexOutOfBounds exceptions, meaning that you are
+                trying to get a value that does not exist.</p> </h4>
+            <br>
+            <h3> Creating and Initializing arrays </h3>
+            <h4> <p> Since Arrays are built-in data structures, they are considered as objects
+                    so when declaring a new one, you  must use the <b>new</b> keyword so that a new
+                    array with new values can be created. </p> </h4>
+            <br>
+            <h4> <p> Arrays can be declared with just a length, or they can be declared using literals/curly brackets.
+                    By giving it a length, all values in the array are set to a default value, and the different
+                    default values are shown below. Using literals, you are able to set each value of the array to
+                    a specific value, as seen below. </p> </h4>
+<pre><code>int[]intArrWithDefaultValues = new int[5]; //all values are defaulted to 0
+int[]intArrayUsingLiterals = {3, 8, 4, 6, 7, 12, 4, 3}; //using literals to initialize every value of the array
+int[]array; //declaring an array with no length or values. If you try to use here, it will give you an error.
+array = new int[20]; //initializing array with length, and all values are defaulted to 0.
+</code></pre>
+
+            <h4> <p> Arrays can be declared with any type, and each type has their own default values.
+                For example, if I were to declare an Integer array, then all of the numbers
+                will start with values of 0. If I were to declare a boolean array, then all of the values
+                will be false. Declaring a char array gives a default value of an empty character literal (''),
+                while declaring a String array gives a null default value. You can see this with the code below.
+            </p> </h4>
+            <br>
+<pre><code>public static void main(String[] args) {
+    int[]intArray = new int[5];
+    String[]stringArray = new String[5];
+    boolean[]booleanArray = new boolean[5];
+    char[]charArray = new char[5];
+    System.out.println(intArray[0]);
+    System.out.println(stringArray[1]);
+    System.out.println(booleanArray[2]);
+    System.out.println(charArray[3]);
+}
+</code></pre>
+            <br>
+            <pre><code>Output:
+0
+null
+false
+
+</code></pre>
+            <h3>Getting Elements and Traversing through the Array </h3>
+            <h4><p> To get a specific element of an array, you need the array name and the
+            index of the array that you want. By using the  array name and after that
+            using the index surrounded in square brackets [], this will return the given array.</p> </h4>
+<pre><code>public static void main(String[] args) {
+    int[]arr = {3, 8, 4, 6, 7, 12, 4, 3};
+    System.out.println(arr[0]); //prints out 3
+    System.out.println(arr[3]); //prints out 6
+    System.out.println(arr[5]); //prints out 12
+}
+</code></pre>
+            <br>
+            <h4><p> To go through all of the elements of an array, the easiest way is to use a for loop.
+            Arrays start from index 0, so you loop from 0 to the length of the array minus 1.
+            The for loop will be able to go through the array and you can use the loop to access all of the
+            array's elements.</p></h>
+            <br>
+<pre><code>public static void main(String[] args) {
+    int[]arr = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    for(int i = 0; i &lt; arr.length; i++){
+        System.out.print(arr[i]+" ");
+    }
+}
+</code></pre>
+<pre><code>Output:
+10 9 8 7 6 5 4 3 2 1
+</code></pre>
+            <br>
+            <h4><p> A simpler way to access the elements would be to use a for-each loop, as shown below:</p></h>
+<pre><code>public static void main(String[] args) {
+    int[]arr = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+    for(int i:arr){
+        System.out.print(i+" ");
+    }
+}
+</code></pre>
+<pre><code>Output:
+10 9 8 7 6 5 4 3 2 1
+</code></pre>
+            <br>
+            <h2> Multidimensional arrays </h2>
+            <h4><p> What if, let's say, you were trying to make a table that stores variables,
+            with multiple columns and multiple rows? The arrays that we were using before, known as
+            1D arrays, don't cut it for this case. In this case, we will have to use 2D Arrays.
+            (Note that 3D Arrays and above exist and can be implemented, but are rarely ever used unless
+            in competitive programming.)</p></h4>
+
+            <h3>Initialization </h3>
+            <h4> <p> To initialize a 2D Array or any multidimensional array, all you have to do is to add
+                    an extra square bracket at the front, and when initializing put a length in both square brackets.
+            <br> <br>
+                For example, say you wanted to make an array with 3 rows and 4 columns. You would do it like so:
+            </p> </h4>
+<pre><code>int [][] grid = new int[3][4];
+</code></pre>
+            <h4><p> You can also use literals in this case as well. If I wanted a 2 by 2 2D Array with the numbers from
+                    1 to 4, I could do it like this:</p></h4>
+<pre><code>int [][] grid = { {1, 2}, {3, 4} }; </code></pre>
+            <h3> Traversing a multidimensional array </h3>
+            <h4> <p> The way to do this would to just use the same number of brackets
+                as the number of dimensions your array is. In our case, we only have a
+                2D array, so our number of square brackets required would be 2.
+                <br>
+                Taking our previous 2 by 2 array, if I wanted the number 3:
+            </p></h4>
+<pre><code>System.out.println(arr[1][0]);</code></pre>
+<pre><code>Output: 3 </code></pre>
+                <h4> <p>3 is in the second row, equivalent to the first index, and the first column,
+                        equivalent to the 0th index, so we use those indexes to access the 3 in the
+                        array. </p> </h4>
+            <br>
+            <h4><p>
+            To traverse the entire 2D Array, you would have to use nested for loops. Depending on
+            the dimension of the array, that is how many for loops you need to nest. Since we are
+            only dealing with a 2D Array, we only need to nest 2 for loops.
+            </p> </h4>
+<pre> <code>
+int[][]arr = {{1, 2}, {3, 4}};
+for(int i = 0; i &lt; arr.length; i++){
+    for(int j = 0; j &lt; arr[0].length; j++){
+        System.out.print(arr[i][j] + " ");
+    }
+    System.out.println();
+}
+</code></pre>
+<pre><code>Output:
+1 2
+3 4
+</code></pre>
+        <br>
+        <h2> ArrayLists </h2>
+        <h4> <p> To use an ArrayList, make sure that you have java.util.List and java.util.ArrayList imported.</p> </h4>
+        <br>
+        <h4> <p> ArrayLists are data structures that can hold objects and their length is not fixed,
+                meaning that their size can change and you can add elements whenever you want.</p> </h4>
+        <h4> <p> However, ArrayLists cannot hold the primitive data types like int or char, so instead they are
+            initialized with the wrapper classes of the primitive data types. Since Java has autoboxing, it is
+            extremely easy to make changes to the arrays and get values, but the initialization is different. </p> </h4>
+<pre><code>ArrayList<Integer> arr = new ArrayList<Integer>();</code></pre>
+        <h4> <p> ArrayLists are also classes so they also need the <b> new </b> keyword to be initialized. As
+                you can see, the Integer wrapper class is used instead of the normal int data type. </p> </h4>
+        <h3> Methods </h3>
+        <h4> <p> ArrayLists have many built-in methods that can be used by you. Here are some of them. For
+            more, you can see the links below for a list of all of the methods. </p> </h4>
+            <h4><ol>
+                <li> add(type a): adds the value a to the very end of the list.
+                <li> add(int index, type a): adds the value a at the specified index. All values after this
+                    index have their index shifted one to the right.
+                <li> size(): returns the current size of the array. This number can constantly change so
+                    it is not recommended to be used in a for loop.
+                <li> get(int index): returns the value at this index.
+                <li> set(int index, type a): sets the value at the specific index to type a
+            </ol></h4>
+            <br>
+        <h3> Getting elements and Traversing </h3>
+        <h4> <p> the get(int index) method can get the number at the specific index of the ArrayList.
+            To traverse through the ArrayList, a for-each loop or a for loop can both be used. </p> </h4>
+<pre><code>public static void main(String[] args) {
+    ArrayList<Integer>arr = new ArrayList<Integer>();
+    arr.add(1); arr.add(2); arr.add(3);
+    System.out.println(arr.get(1)); //prints 2
+    for(int i = 0; i &lt; arr.size(); i++){
+        System.out.print(arr.get(i)+" ");
+    }
+    System.out.println();
+    for(Integer i : arr){ //note that we use the wrapper class, as autoboxing does not apply here
+        System.out.print(i+" ");
+    }
+}</code></pre>
+<pre><code>Output:
+2
+1 2 3
+1 2 3
+</code></pre>
+        <h2> <p>  For more information, you can visit these sites: </p> </h2>
+        <h4> <ol>
+            <li> <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html"> Oracle Docs: Arrays </a> <br> <br>
+            <li> <a href="https://www.tutorialspoint.com/java/java_arrays.htm"> JavaAtPoint: Arrays </a> <br> <br>
+            <li> <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html"> Oracle Docs: ArrayList </a> <br> <br>
+            <li> <a href="https://www.geeksforgeeks.org/arraylist-in-java/"> GeeksForGeeks: ArrayLists </a> <br> <br>
+        </ol> </h4>
+        <a href="searching.html" class = "btn btn-success btn-lg" role="button">Next Tutorial</a>
+        </div>
+    </div>
+    <footer class = "page-footer">
+        <div class = "icons">
+            <ul>
+                <li>
+                    <a href="https://github.com/AlanL2" title="Github">
+                        <div class = "image">
+                            <img src="images/github.png" class="current-image" alt="Github" height="32">
+                        </div>
+                    </a>
+                    <a href="https://dmoj.ca/user/AlanL" title="DMOJ Profile">
+                        <div class = "image">
+                            <img src="images/dmoj.png" class="current-image" alt="DMOJ" height="32">
+                        </div>
+                    </a>
+                    <a href = "https://mcpt.ca/user/AlanL" title = "MCPT">
+                        <div class = "image">
+                            <img src = "images/mcptlogo.png" class = "current-image" alt = "MCPT" height = "32">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
