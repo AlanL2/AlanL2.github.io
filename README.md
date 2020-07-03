@@ -1,2 +1,2 @@
 # alanl.github.io
-A Personal Portfolio
+Personal portfolio made using HTML, CSS and a bit of JS. 
